@@ -1,10 +1,10 @@
 <template>
-    <div id="app">
-        <TodoHeader></TodoHeader>
-        <TodoInput></TodoInput>
-        <TodoList></TodoList>
-        <TodoFooter></TodoFooter>
-    </div>
+  <div id="app">
+    <TodoHeader />
+    <TodoInput />
+    <TodoList />
+    <TodoFooter />
+  </div>
 </template>
 
 <script>

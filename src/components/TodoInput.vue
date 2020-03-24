@@ -1,5 +1,5 @@
 <template>
-    <div>TodoInput</div>
+  <div>TodoInput</div>
 </template>
 
 <script>

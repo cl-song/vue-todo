@@ -1,5 +1,5 @@
 <template>
-    <div>TodoHeader</div>
+  <div>TodoHeader</div>
 </template>
 
 <script>

@@ -81,6 +81,7 @@ input[type="text"]::-ms-clear, input[type="password"]::-ms-clear, input[type="te
 #skipNavi a:hover, #skipNavi a:focus, #skipNavi a:active{position:absolute;top:0;padding:5px 0;background:#1d60a7;color:#fff;z-index:500;}
 
 /* FORM */
+*:focus{outline:none;}
 input, select{box-sizing:border-box;width:160px;height:40px;padding:0 10px;border:1px solid #ccc;font-size:14px;color:#666;line-height:2.8;}
 input:disabled,
 input:read-only,

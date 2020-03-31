@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <TodoHeader />
-    <TodoInput />
-    <TodoList />
-    <TodoFooter />
+    <TodoInput @addTodo="addTodo" />
+    <TodoList
+      :propsdata="todoItems"
+      @removeTodo="removeTodo"
+    />
+    <TodoFooter @removeAll="clearAll" />
   </div>
 </template>
 
@@ -19,6 +22,33 @@ export default {
         TodoInput,
         TodoList,
         TodoFooter,
+    },
+    data() {
+        return {
+            todoItems: [],
+        };
+    },
+    created() {
+        if (localStorage.length > 0) {
+            // eslint-disable-next-line no-plusplus
+            for (let i = 0; i < localStorage.length; i++) {
+                this.todoItems.push(localStorage.key(i));
+            }
+        }
+    },
+    methods: {
+        addTodo(todoItem) {
+            localStorage.setItem(todoItem, todoItem);
+            this.todoItems.push(todoItem);
+        },
+        removeTodo(todoItem, index) {
+            localStorage.removeItem(todoItem);
+            this.todoItems.splice(index, 1);
+        },
+        clearAll() {
+            localStorage.clear();
+            this.todoItems = [];
+        },
     },
 };
 </script>

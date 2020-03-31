@@ -1,7 +1,7 @@
 <template>
   <ul class="todoList">
     <li
-      v-for="(todoItem, index) in todoItems"
+      v-for="(todoItem, index) in propsdata"
       :key="todoItem"
     >
       <span>
@@ -20,24 +20,11 @@
 
 <script>
 export default {
-    data() {
-        return {
-            todoItems: [],
-        };
-    },
-    created() {
-        if (localStorage.length > 0) {
-            // eslint-disable-next-line no-plusplus
-            for (let i = 0; i < localStorage.length; i++) {
-                this.todoItems.push(localStorage.key(i));
-            }
-        }
-    },
+    // eslint-disable-next-line vue/require-prop-types
+    props: ['propsdata'],
     methods: {
-        // eslint-disable-next-line no-unused-vars
         removeTodo(todoItem, index) {
-            localStorage.removeItem(todoItem);
-            this.todoItems.splice(index, 1);
+            this.$emit('removeTodo', todoItem, index);
         },
     },
 };

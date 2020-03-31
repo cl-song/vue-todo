@@ -30,7 +30,7 @@ export default {
                 // 인풋박스에 입력된 테스트의 앞뒤 공백 문자열 제거
                 // eslint-disable-next-line no-unused-vars
                 const value = this.newTodoItem && this.newTodoItem.trim();
-                localStorage.setItem(this.newTodoItem, this.newTodoItem);
+                this.$emit('addTodo', value);
                 this.clearInput();
             }
         },

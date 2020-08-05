@@ -32,7 +32,9 @@ export default {
         if (localStorage.length > 0) {
             // eslint-disable-next-line no-plusplus
             for (let i = 0; i < localStorage.length; i++) {
-                this.todoItems.push(localStorage.key(i));
+                if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
+                    this.todoItems.push(localStorage.key(i));
+                }
             }
         }
     },
